@@ -90,6 +90,7 @@ td {
 .description h2 {
   margin-top: 0;
   margin-bottom: 1rem;
+  text-transform: capitalize;
 }
 
 .description a:hover {
@@ -103,7 +104,65 @@ td {
   border-color: var(--white) !important;
 }
 
+.top-button {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  color: var(--blue);
+  font-size: 2rem !important;
+  height: 3rem !important;
+  width: 3rem !important;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: var(--darkgrey);
+}
+
+.toggle-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0rem;
+}
+
+.cursor {
+  position: fixed;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  left: -100px;
+  top: 50%;
+  background-color: var(--blue);
+  z-index: 10000;
+  border: 2px solid var(--blue);
+  height: 0.3rem;
+  width: 0.3rem;
+  transition: all 50ms ease-out;
+}
+
+.cursor-pointer {
+  position: fixed;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  left: -100px;
+  top: 50%;
+  background-color: transparent;
+  z-index: 10000;
+  border: 2px solid var(--blue);
+  height: 2rem;
+  width: 2rem;
+  transition: all 350ms ease-out;
+}
+
 @media only screen and (max-width: 800px) {
+  .toggle-flex {
+    justify-content: flex-start;
+    margin: 1rem 0rem;
+  }
+
   p {
     font-size: 80%;
   }
@@ -116,5 +175,17 @@ td {
   .description h2 {
     margin-top: 0;
     margin-bottom: 0.8rem;
+  }
+  .select-days {
+    max-width: 90px;
+  }
+  .top-button {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .cursor,
+  .cursor-pointer {
+    display: none;
   }
 }
